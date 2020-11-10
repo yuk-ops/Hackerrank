@@ -1,0 +1,27 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int B[] = new int[n];
+        for(int i=0;i<n;i++) B[i] = sc.nextInt();
+        int count=0;
+        for(int i=0;i<n-1;i++){
+            if(B[i]%2==0);
+            else{
+                B[i]++;
+                B[i+1]++;
+                count=count+2;
+            }
+        }
+        if(B[n-2]%2==0&&B[n-1]%2!=0) System.out.print("NO");
+        else System.out.println(count);
+    }
+}
